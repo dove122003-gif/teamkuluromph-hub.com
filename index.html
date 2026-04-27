@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Kulurom PH</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+    body { background:#0f172a; color:#fff; }
+    header {
+      display:flex; justify-content:space-between; align-items:center;
+      padding:20px; background:#020617; position:sticky; top:0;
+    }
+    header h1 { color:#38bdf8; }
+    nav a {
+      margin-left:15px; text-decoration:none; color:#fff;
+      transition:0.3s;
+    }
+    nav a:hover { color:#38bdf8; }
+
+    .hero {
+      text-align:center; padding:80px 20px;
+    }
+    .hero h2 { font-size:2.5rem; }
+    .hero p { margin-top:10px; color:#cbd5f5; }
+
+    .team {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+      gap:20px; padding:40px;
+    }
+
+    .card {
+      background:#020617; padding:20px; border-radius:15px;
+      text-align:center; transition:0.3s;
+      cursor:pointer;
+    }
+
+    .card:hover { transform:translateY(-10px); }
+
+    .card img {
+      width:100px; height:100px; border-radius:50%;
+      object-fit:cover; margin-bottom:10px;
+    }
+
+    .skills {
+      margin-top:10px;
+    }
+
+    .skill-bar {
+      background:#1e293b; border-radius:10px; overflow:hidden;
+      margin:5px 0;
+    }
+
+    .skill-fill {
+      height:10px; background:#38bdf8; width:0;
+      transition:1s;
+    }
+
+    .modal {
+      position:fixed; top:0; left:0; width:100%; height:100%;
+      background:rgba(0,0,0,0.7);
+      display:none; justify-content:center; align-items:center;
+    }
+
+    .modal-content {
+      background:#020617; padding:30px; border-radius:15px;
+      max-width:400px; text-align:center;
+    }
+
+    .close { cursor:pointer; float:right; }
+
+    footer {
+      text-align:center; padding:20px; background:#020617;
+    }
+
+    @media(max-width:600px){
+      .hero h2 { font-size:1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Team Kulurom PH</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#team">Team</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Laag ug Kaon Samtang Pwede Pa!</h2>
+  <p>Meet Team Kulurom - Laagan, Way-Libog, Tunay, Kaon Ray Bisyo!</p>
+</section>
+
+<section class="team" id="team">
+  <div class="card" onclick="openModal('Echo Bravo','Bossing')">
+    <img src="Bossing.jpeg" alt="">
+    <h3>Echo Bravo</h3>
+    <p>Bossing</p>
+    <br> </br>
+     <p>Moto : Higugma-a Ko Nga Lami Pa Sa Kinilaw, Kay Higugmaon Pud Tika Nga Ikaw Ray Makatilaw! Aray Mo Pakak!!</p>
+    <div class="skills">
+      <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+      <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+    </div>
+  </div>
+
+  <div class="card" onclick="openModal('Bravo','Gwapo Kay Uso')">
+    <img src="Bravo.jpeg" alt="">
+    <h3>Bravo</h3>
+    <p>Gwapo Kay Uso</p>
+    <br> </br>
+    <p>Moto : Bisag Unsa Pa Na Kalisod Ang Imo Kinabuhi, Ayaw Jud Kalimot Sa Pagpa-utog!</p>
+    <div class="skills">
+      <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+      <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+    </div>
+  </div>
+
+  <div class="card" onclick="openModal('DenDen','Boy Tisoy')">
+   <img src="Denden.jpeg" alt="">
+    <h3>DenDen</h3>
+    <p>Boy Tisoy</p>
+    <br> </br>
+    <p>Moto : Gusto Ka Mo Adto Sa Tarung Nga Tao? Tarung Diay Ka? hahahakdog</p>
+    <div class="skills">
+      <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+      <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+    </div>
+  </div>
+
+  <div class="card" onclick="openModal('Ton2x','Batang Palautog')">
+   <img src="Tonton.jpeg" alt="">
+    <h3>Ton2x</h3>
+    <p>EL Mundo</p>
+    <br> </br>
+    <p>Moto : Maypa Ning Uban Lami Kaayug Lovelife, Ako Tawon Lami Ra! OhhShieert Not Goord!</p>
+    <div class="skills">
+      <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+      <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+    </div>
+  </div>
+
+  <div class="card" onclick="openModal('Moning','Small But Terrible')">
+    <img src="Moning.jpeg" alt="">
+    <h3>Moning</h3>
+    <p>Small But Terrible</p>
+    <br> </br>
+    <p>Moto : Lisod Man Gani Tuohan ang "On The Way" Kana Pa Kaha Imong "I will Stay" . Agay!</p>
+    <div class="skills">
+      <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+      <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+    </div>
+  </div>
+
+  <div class="card" onclick="openModal('Mommy Jen','Inahan Sa Kanunayng Panabang')">
+    <img src="Mommy jenny.jpeg" alt="">
+    <h3>Mommy Jen</h3>
+    <p>Inahan Sa Kanunayng Panabang</p>
+    <br> </br>
+    <p>Moto : Bahalag Walay Sulod Ang Pitaka Importante Gwapa!!</p>
+    <div class="skills">
+      <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+      <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+    </div>
+  </div>
+
+  <div class="card" onclick="openModal('Mayka Girl','Girl In the Mirror')">
+    <img src="Mayka.jpeg" alt="">
+    <h3>Mayka Girl</h3>
+    <p>Girl In the Mirror</p>
+    <br> </br>
+    <p>Moto : Hinuktok Gani Nang Buang, Kita Pa Ba Nga Tarung! ehhh, ehhh</p>
+    <div class="skills">
+      <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+      <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+    </div>
+  </div>
+
+</section>
+
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">X</span>
+    <h2 id="modal-name"></h2>
+    <p id="modal-role"></p>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Team Kulurom PH -Limited Edition - Indo Concept</p>
+</footer>
+
+<script>
+  function openModal(name, role){
+    document.getElementById('modal').style.display = 'flex';
+    document.getElementById('modal-name').innerText = name;
+    document.getElementById('modal-role').innerText = role;
+  }
+
+  function closeModal(){
+    document.getElementById('modal').style.display = 'none';
+  }
+
+  // Animate skill bars on load
+  window.onload = () => {
+    document.querySelectorAll('.skill-fill').forEach(bar => {
+      let width = bar.style.width;
+      bar.style.width = '0';
+      setTimeout(() => bar.style.width = width, 200);
+    });
+  }
+</script>
+
+</body>
+</html>
